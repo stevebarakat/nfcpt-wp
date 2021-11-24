@@ -1,16 +1,322 @@
-html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body,
+input,
+button {
+  font-family: var(--primaryFont);
+  color: var(--grey60);
+}
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.5;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: var(--accentColor);
+}
+a:hover {
+  color: var(--primaryColor);
 }
 
-* {
-  box-sizing: border-box;
+b {
+  font-weight: 800;
+}
+
+.page blockquote p {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+blockquote p::before,
+blockquote span::before {
+  position: relative;
+  top: 16px;
+  line-height: 25%;
+  font-size: 5rem;
+  content: "\201C";
+}
+
+blockquote p::after,
+blockquote span::after {
+  position: relative;
+  top: 16px;
+  line-height: 25%;
+  font-size: 5rem;
+  content: "\201D";
+}
+
+.inputWrap {
+  padding: 0.5rem 0;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 2px var(--grey25);
+}
+
+strong {
+  font-weight: bold;
+}
+
+small,
+.text-sm {
+  font-size: 0.75rem;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: bold;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 100%;
+}
+.flex {
+  display: flex;
+}
+.strike {
+  text-decoration: line-through;
+  font-weight: 400;
+}
+.hidden {
+  font-size: 0;
+  position: absolute;
+}
+article {
+  padding: 4rem 0 0;
+}
+
+.container {
+  width: 1350px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.loading {
+  text-align: center;
+}
+.loader {
+  width: 100%;
+  height: 0.66em;
+  border: 0.05em currentcolor solid;
+  border-radius: 0.1em;
+  background: linear-gradient(
+    -60deg,
+    transparent 0%,
+    transparent 50%,
+    currentcolor 50%,
+    currentcolor 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1em 2em;
+  background-position: 0 0;
+  animation: loader 0.8s infinite linear;
+}
+
+@keyframes loader {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -2em 0;
+  }
+}
+
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+@media (min-width: 700px) {
+  article {
+    padding: 4rem 0;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* PAGE STYLES */
+.page p,
+.page ul {
+  line-height: 1.75;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.page p {
+  margin-bottom: 1.75rem;
+}
+
+.page ul {
+  margin-bottom: 1.5rem;
+}
+
+.page ul li {
+  list-style: disc outside;
+  margin-left: 1rem;
+  padding-bottom: 0.75rem;
+}
+
+.page h1,
+.page h2,
+.page h3,
+.page h4,
+.page h5 {
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+.page h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.page h2 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.page h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.page h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.page h5 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.page .heading {
+  position: relative;
+}
+.mastheadWrap {
+  position: relative;
+  width: 100%;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+}
+
+.mastheadWrap .h1 {
+  display: block;
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 3rem 0 1.5rem;
+  line-height: 1.25;
+  color: white;
+}
+
+.mastheadWrap .description {
+  display: block;
+  color: white;
+  line-height: 1.5rem;
+  max-width: 60ch;
+}
+
+.pageWrap {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 3rem;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+@media (min-width: 1050px) {
+  .pageWrap {
+    grid-template-columns: 2fr 1fr;
+  }
+  .sidebarWrap {
+    position: relative;
+    top: -200px;
+  }
+}
+@media (min-width: 650px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 3rem 2rem 1.5rem;
+    line-height: 1.25;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  .page p,
+  .page ul {
+    line-height: 2;
+    font-size: 1.25rem;
+    margin: 0 2rem 2.25rem;
+  }
+
+  .page ul li {
+    margin-left: 3rem;
+  }
+
+  .mastheadWrap .h1 {
+    color: white;
+    font-size: 3.5rem;
+    padding: 0 2rem;
+  }
+
+  .mastheadWrap .description p {
+    margin: 0;
+    padding: 0 2rem;
+  }
+}
+
+form[name="contact"] {
+  padding: 4rem;
+}
+.inputWrap {
+  padding-bottom: 2rem;
+}
+.inputWrap label {
+  display: inline-block;
+  padding-bottom: 16px;
+}
+@media (min-width: 850px) {
 }
