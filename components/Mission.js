@@ -1,7 +1,6 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import CountUp from "react-countup";
 import styles from "./mission.module.css";
-import { FaCheckCircle } from "react-icons/fa";
 import useOnScreen from "../hooks/useOnScreen";
 
 const Mission = () => {

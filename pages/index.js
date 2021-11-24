@@ -1,30 +1,12 @@
 import Head from "next/head";
-import loadable from "@loadable/component";
 import { gql } from "@apollo/client";
 import { client } from "../lib/apollo";
 import Hero from "../components/Hero";
 import Blocks from "../components/Blocks";
 import Mission from "../components/Mission";
 import CallToAction from "../components/CallToAction";
-import Link from "next/link";
-import Button from "../components/Button";
 import Treatments from "../components/Treatments";
 import Layout from "../components/Layout";
-import Image from "next/image";
-import { buildUrl } from "cloudinary-build-url";
-import { Swiper, SwiperSlide } from "swiper/react";
-import styles from "./index.module.css";
-import special from "../images/new-patient-horizontal.svg";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-// import Swiper core and required modules
-import SwiperCore, { Autoplay, Pagination } from "swiper";
-
-// install Swiper modules
-SwiperCore.use([Autoplay, Pagination]);
 
 export async function getStaticProps() {
   const result = await client.query({
@@ -56,7 +38,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ home, menuItems }) {
+export default function Home({ home }) {
   return (
     <>
       <Head>

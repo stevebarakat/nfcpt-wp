@@ -2,7 +2,6 @@ import styles from "./sidebar.module.css";
 import { buildUrl } from "cloudinary-build-url";
 import Image from "next/image";
 import coupon from "../images/new-patient-vertical.svg";
-import Button from "./Button";
 import ClaimOfferForm from "./ClaimOfferForm";
 import { gql, useQuery } from "@apollo/client";
 

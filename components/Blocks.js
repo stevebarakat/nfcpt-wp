@@ -1,8 +1,6 @@
-import React, { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "./Button";
-import useOnScreen from "../hooks/useOnScreen";
 import ray from "../images/ray.webp";
 import trio from "../images/trio.webp";
 import styles from "./blocks.module.css";
