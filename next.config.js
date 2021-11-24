@@ -6,8 +6,9 @@ module.exports = withPWA({
   pwa: {
     disable: prod ? false : true,
     dest: "public",
-    register: false,
-    skipWaiting: false,
+    register: true,
+    scope: "/app",
+    sw: "sw.js",
   },
   images: {
     domains: [
