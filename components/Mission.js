@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import CountUp from "react-countup";
 import styles from "./mission.module.css";
 import { FaCheckCircle } from "react-icons/fa";
@@ -8,10 +8,6 @@ const Mission = () => {
   const statsRef = useRef(null);
 
   const onScreen = useOnScreen(statsRef, "-100px");
-
-  useEffect(() => {
-    console.log(onScreen);
-  }, [onScreen]);
 
   return (
     <div className={styles.mission}>
