@@ -46,27 +46,12 @@ export async function getStaticProps() {
             title
           }
         }
-        menuItems(where: { location: PRIMARY, parentId: "null" }) {
-          nodes {
-            path
-            label
-            id
-            childItems {
-              nodes {
-                id
-                path
-                label
-              }
-            }
-          }
-        }
       }
     `,
   });
   return {
     props: {
       home: await result.data.pageBy,
-      menuItems: await result.data.menuItems.nodes,
     },
   };
 }
@@ -78,7 +63,7 @@ export default function Home({ home, menuItems }) {
         <title>{home.seo.title}</title>
         <meta name="description" content={home.seo.metaDesc} />
       </Head>
-      <Layout menuItems={menuItems}>
+      <Layout>
         <Hero home={home} />
         <CallToAction />
         <Mission />

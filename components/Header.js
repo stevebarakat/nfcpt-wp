@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { useQuery, gql } from "@apollo/client";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 import Link from "next/link";
 import Hamburger from "hamburger-react";
@@ -6,6 +7,25 @@ import { FaCaretDown } from "react-icons/fa";
 import Image from "next/image";
 import logo from "../images/logo.svg";
 import mobileLogo from "../images/mobile-logo.svg";
+
+const PRIMARY_MENU = gql`
+  query GetPrimaryMenu {
+    menuItems(where: { location: PRIMARY, parentId: "null" }) {
+      nodes {
+        path
+        label
+        id
+        childItems {
+          nodes {
+            id
+            path
+            label
+          }
+        }
+      }
+    }
+  }
+`;
 
 const Menu = ({ item, handleSetMobileOpen }) => {
   const ref = useRef();
@@ -102,10 +122,19 @@ const Menu = ({ item, handleSetMobileOpen }) => {
   return <>{primaryMenu}</>;
 };
 
-export default function Header({ menuItems }) {
+export default function Header() {
+  const { loading, error, data } = useQuery(PRIMARY_MENU);
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleSetMobileOpen = (val) => setMobileOpen(val);
+  if (loading)
+    return (
+      <div className="loading">
+        <div className="loader"></div>
+      </div>
+    );
+  if (error) return <p>Error: {error.message} </p>;
 
+  const menuItems = data?.menuItems.nodes;
   return (
     <>
       <span className="hidden">Open main menu</span>

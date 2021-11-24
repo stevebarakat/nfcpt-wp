@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import Image from "next/image";
 
-export default function Page({ page, menuItems }) {
+export default function Page({ page }) {
   const urlPixelated = buildUrl(page.featuredImage.node.slug, {
     cloud: {
       cloudName: "stevebarakat",
@@ -24,7 +24,7 @@ export default function Page({ page, menuItems }) {
         <title>{page.seo.title}</title>
         <meta name="description" content={page.seo.metaDesc} />
       </Head>
-      <Layout menuItems={menuItems}>
+      <Layout>
         <div className="page">
           <div className="mastheadWrap">
             <Image
@@ -111,20 +111,6 @@ export async function getStaticProps({ params }) {
             }
           }
         }
-        menuItems(where: { location: PRIMARY, parentId: "null" }) {
-          nodes {
-            path
-            label
-            id
-            childItems {
-              nodes {
-                id
-                path
-                label
-              }
-            }
-          }
-        }
       }
     `,
     variables: { slug },
@@ -132,7 +118,6 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       page: result.data.pageBy,
-      menuItems: await result.data.menuItems.nodes,
     },
   };
 }
