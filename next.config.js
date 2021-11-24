@@ -9,6 +9,7 @@ module.exports = withPWA({
     register: true,
     scope: "/app",
     sw: "sw.js",
+    skipWaiting: false,
   },
   images: {
     domains: [
