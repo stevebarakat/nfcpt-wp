@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useRef } from "react";
+import { useState, useLayoutEffect } from "react";
 
 export default function useOnScreen(ref, rootMargin = "0px") {
   // State and setter for storing whether element is visible

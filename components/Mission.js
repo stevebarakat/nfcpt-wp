@@ -1,27 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import CountUp from "react-countup";
 import styles from "./mission.module.css";
 import { FaCheckCircle } from "react-icons/fa";
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import useOnScreen from "../hooks/useOnScreen";
 
 const Mission = () => {
-  gsap.registerPlugin(ScrollTrigger);
-  const [triggered, setTriggered] = useState(0);
+  const statsRef = useRef(null);
 
-  function myEnterFunc() {
-    setTriggered(-99);
-  }
+  const onScreen = useOnScreen(statsRef, "-100px");
 
   useEffect(() => {
-    ScrollTrigger.create({
-      trigger: "#stats",
-      start: "top bottom",
-      onEnter: myEnterFunc,
-      once: true,
-    });
-    return ScrollTrigger.kill(false);
-  }, []);
+    console.log(onScreen);
+  }, [onScreen]);
 
   return (
     <div className={styles.mission}>
@@ -50,20 +40,20 @@ const Mission = () => {
             <li>No long term contracts.</li>
             <li>Free transportation to and from appointments.</li>
           </ul>
-          <div id="stats" className={styles.stats}>
+          <div ref={statsRef} id="stats" className={styles.stats}>
             <div className={styles.stat}>
               <CountUp
-                start={triggered}
+                start={onScreen}
                 end={25}
                 duration={3.5}
                 useEasing={true}
                 suffix="Y+"
               />
-              <span>Serving North Florida</span>
+              <span id="ubu">Serving North Florida</span>
             </div>
             <div className={styles.stat}>
               <CountUp
-                start={triggered}
+                start={onScreen}
                 end={20}
                 duration={3.75}
                 useEasing={true}
@@ -73,7 +63,7 @@ const Mission = () => {
             </div>
             <div className={styles.stat}>
               <CountUp
-                start={triggered}
+                start={onScreen}
                 end={15}
                 duration={4}
                 useEasing={true}
