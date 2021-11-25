@@ -9,9 +9,9 @@ import Hero from "../components/Hero";
 // import Blocks from "../components/Blocks";
 // import CallToAction from "../components/CallToAction";
 const CallToAction = loadable(() => import("./CallToAction"));
-const Mission = loadable(() => import("./Mission"));
-const Treatments = loadable(() => import("./Treatments"));
-const Blocks = loadable(() => import("./Blocks"));
+const Mission = loadable(() => import("../components/Mission"));
+const Treatments = loadable(() => import("../components/Treatments"));
+const Blocks = loadable(() => import("../components/Blocks"));
 
 export async function getStaticProps() {
   const result = await client.query({
