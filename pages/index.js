@@ -8,7 +8,7 @@ import Hero from "../components/Hero";
 // import Treatments from "../components/Treatments";
 // import Blocks from "../components/Blocks";
 // import CallToAction from "../components/CallToAction";
-const CallToAction = loadable(() => import("./CallToAction"));
+const CallToAction = loadable(() => import("../components/CallToAction"));
 const Mission = loadable(() => import("../components/Mission"));
 const Treatments = loadable(() => import("../components/Treatments"));
 const Blocks = loadable(() => import("../components/Blocks"));
