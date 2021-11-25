@@ -60,12 +60,7 @@ const Footer = () => {
     </li>
   ));
 
-  if (loading)
-    return (
-      <div className="loading">
-        <div className="loader"></div>
-      </div>
-    );
+  if (loading) return <div className="loader"></div>;
   if (error) return <p>Error: {error.message} </p>;
 
   const contactInfo = data.nfcptSettings.nfcptSettings.contactInfo;

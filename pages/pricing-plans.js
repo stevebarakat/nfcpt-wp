@@ -29,7 +29,7 @@ const PRICING_PLANS = gql`
 export default function Plans() {
   const { loading, error, data } = useQuery(PRICING_PLANS);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <div className="loader"></div>;
   if (error) return <p>Error: {error.message}</p>;
 
   const pricingPlans = data.nfcptSettings.nfcptSettings.pricingPlans.map(

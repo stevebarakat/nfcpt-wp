@@ -126,12 +126,7 @@ export default function Header() {
   const { loading, error, data } = useQuery(PRIMARY_MENU);
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleSetMobileOpen = (val) => setMobileOpen(val);
-  if (loading)
-    return (
-      <div className="loading">
-        <div className="loader"></div>
-      </div>
-    );
+  if (loading) return <div className="loader"></div>;
   if (error) return <p>Error: {error.message} </p>;
 
   const menuItems = data?.menuItems.nodes;

@@ -102,10 +102,6 @@ article {
   margin: 0 auto;
   padding: 0 2rem;
 }
-
-.loading {
-  text-align: center;
-}
 .loader {
   width: 100%;
   height: 0.66em;
