@@ -189,6 +189,12 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+        <div className={styles.colophon}>
+          <div>&copy;2021 North Florida Chiropractic Physical Therapy</div>
+          <div>
+            Site by <a href="https://stevebarakat.com">S.Barakat</a>
+          </div>
+        </div>
       </div>
     </footer>
   );
