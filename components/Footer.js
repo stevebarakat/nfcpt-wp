@@ -51,7 +51,7 @@ const FOOTER = gql`
 `;
 
 const Footer = () => {
-  const { loading, error, data } = useQuery(FOOTER, { pollInterval: 500 });
+  const { loading, error, data } = useQuery(FOOTER);
 
   const officeHours = data?.nfcptSettings.nfcptSettings.officeHours;
   const hours = officeHours?.map((item, i) => (
