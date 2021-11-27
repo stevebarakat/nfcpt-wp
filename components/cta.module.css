@@ -15,12 +15,19 @@
 }
 
 .ctaLeftWrap {
+  display: flex;
+  flex-wrap: wrap;
   max-width: 675px;
   width: 100%;
-  justify-self: center;
-  align-self: center;
-  padding: 2rem clamp(4rem, 7vmin, 6rem);
+  justify-content: center;
+  align-items: center;
+  padding: 2rem clamp(1rem, 7vmin, 4rem);
 }
+
+.ctaLeftWrap svg {
+  max-height: 75px;
+}
+
 .ctaRightWrap {
   display: flex;
   padding: 2rem 1rem;
@@ -54,6 +61,16 @@
   letter-spacing: -0.05rem;
   text-transform: uppercase;
   font-weight: 400;
+}
+.ninety,
+.special {
+  padding: 1rem;
+  display: inline-block;
+}
+
+.ninety {
+  position: relative;
+  right: 5%;
 }
 
 @media (min-width: 700px) {

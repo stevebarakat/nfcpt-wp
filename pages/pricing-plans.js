@@ -27,7 +27,9 @@ const PRICING_PLANS = gql`
 `;
 
 export default function Plans() {
-  const { loading, error, data } = useQuery(PRICING_PLANS);
+  const { loading, error, data } = useQuery(PRICING_PLANS, {
+    pollInterval: 500,
+  });
 
   if (loading) return <div className="loader"></div>;
   if (error) return <p>Error: {error.message}</p>;

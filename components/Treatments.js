@@ -33,7 +33,7 @@ const DISORDERS = gql`
 `;
 
 const Treatments = () => {
-  const { loading, error, data } = useQuery(DISORDERS);
+  const { loading, error, data } = useQuery(DISORDERS, { pollInterval: 500 });
   if (loading) return <div className="loader"></div>;
 
   if (error) return <p>Error: {error.message} </p>;

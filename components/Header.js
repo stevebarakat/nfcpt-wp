@@ -123,7 +123,9 @@ const Menu = ({ item, handleSetMobileOpen }) => {
 };
 
 export default function Header() {
-  const { loading, error, data } = useQuery(PRIMARY_MENU);
+  const { loading, error, data } = useQuery(PRIMARY_MENU, {
+    pollInterval: 500,
+  });
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleSetMobileOpen = (val) => setMobileOpen(val);
   if (loading) return <div className="loader"></div>;

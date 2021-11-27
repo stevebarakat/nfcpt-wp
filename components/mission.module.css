@@ -6,17 +6,21 @@
   background: white;
   border-top: 4px solid white;
   font-family: var(--secondaryFont);
+  /* font-size: 2rem; */
   color: var(--grey60);
   padding: 4rem 0;
   position: relative;
 }
 
 .mission h1 {
+  display: block;
   font-family: var(--secondaryFont);
-  font-size: 2.5rem;
-  justify-self: flex-start;
-  align-self: flex-start;
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.1rem;
+  text-align: center;
   margin-top: 0;
+  padding-bottom: 1rem;
 }
 
 .mission img {
@@ -46,15 +50,6 @@
   box-shadow: var(--shadow-elevation-medium);
 }
 
-.missionHeader {
-  font-size: 1.75rem;
-  font-weight: 800;
-  letter-spacing: -0.1rem;
-  display: block;
-  padding-bottom: 1rem;
-  text-align: center;
-}
-
 .missionSubHeader {
   padding-bottom: 1.25rem;
   display: block;
@@ -66,14 +61,15 @@
 }
 .missionDescription {
   display: block;
-  line-height: 1.75rem;
-  font-size: 1rem;
+  line-height: clamp(1.25, 5vmin, 1.75);
+  font-size: clamp(1rem, 5vmin, 1.5rem);
   padding: 0 2rem;
 }
 
 .missionList li {
   padding-left: 2rem;
-  line-height: 1.75rem;
+  line-height: clamp(1.25, 5vmin, 1.75);
+  font-size: clamp(1rem, 5vmin, 1.5rem);
 }
 
 .missionList li:before {
@@ -117,7 +113,6 @@
   .mission {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .missionHeader {
     font-size: 2.25rem;
     text-align: left;

@@ -2,15 +2,22 @@ import styles from "./cta.module.css";
 import Button from "./Button";
 import Image from "next/image";
 import Link from "next/link";
-import special from "../images/new-patient-horizontal.svg";
+import ninety from "../images/ninety.svg";
+import special from "../images/special.svg";
 
-const CallToAction = () => {
+const Cta = () => {
   return (
     <div className={styles.cta}>
       <div className="grid">
         <div id="left" className={styles.ctaLeftWrap}>
+          <div className={styles.ninety}>
+            <Image
+              objectPosition="center"
+              src={ninety}
+              alt="New Patient Special"
+            />
+          </div>
           <Image
-            layout="responsive"
             objectPosition="center"
             src={special}
             alt="New Patient Special"
@@ -57,4 +64,4 @@ const CallToAction = () => {
   );
 };
 
-export default CallToAction;
+export default Cta;
