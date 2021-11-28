@@ -7,7 +7,6 @@ import "@fontsource/inter/variable.css";
 import "../styles/reset.css";
 import "../styles/swiper.custom.css";
 import "../styles/variables.css";
-import "../styles/plans.css";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {

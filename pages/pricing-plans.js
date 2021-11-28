@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import Image from "next/image";
 import happy from "../images/happy.jpg";
+import styles from "./plans.module.css";
 
 const PRICING_PLANS = gql`
   query GetPricingPlans {
@@ -34,18 +35,18 @@ export default function Plans() {
 
   const pricingPlans = data.nfcptSettings.nfcptSettings.pricingPlans.map(
     (plan, i) => (
-      <div key={i} className="planWrap">
-        <div className="top">
+      <div key={i} className={styles.planWrap}>
+        <div className={styles.top}>
           <h3>{plan.pricingPlan.title}</h3>
         </div>
         {plan.pricingPlan.pricingLevel.map((level, j) => (
-          <div key={j} className="grid3">
+          <div key={j} className={styles.grid3}>
             <div>{level.numberOfVisits} Visits</div>
             <div style={{ fontWeight: "800" }}>
               Save {level.discountAmount}%
             </div>
             <div>
-              <span className="strike">${level.newPrice}</span> $
+              <span className={styles.strike}>${level.newPrice}</span> $
               {level.oldPrice}
             </div>
           </div>
@@ -63,7 +64,7 @@ export default function Plans() {
         />
       </Head>
       <Layout>
-        <div className="plans">
+        <div className={styles.plans}>
           <Image
             priority
             layout="fill"
