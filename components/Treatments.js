@@ -59,17 +59,17 @@ const Treatments = () => {
             clickable: true,
           }}
           breakpoints={{
-            400: {
+            0: {
               slidesPerView: 1,
-              spaceBetween: 20,
+              spaceBetween: 10,
             },
             570: {
               slidesPerView: 2,
-              spaceBetween: 40,
+              spaceBetween: 20,
             },
             690: {
               slidesPerView: 3,
-              spaceBetween: 20,
+              spaceBetween: 30,
             },
             980: {
               slidesPerView: 4,
