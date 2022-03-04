@@ -7,6 +7,7 @@ export default function ClaimOfferForm() {
         name="claim-offer"
         action="/get-started-thanks"
         method="POST"
+        data-netlify-recaptcha="true"
         data-netlify="true"
       >
         <input type="hidden" name="form-name" value="claim-offer" />
@@ -16,18 +17,14 @@ export default function ClaimOfferForm() {
         </div>
         <div className="inputWrap">
           <label htmlFor="phoneNumber">Phone Number:</label> <br />
-          <input
-            type="tel"
-            name="phoneNumber"
-            id="phoneNumber"
-            required
-          />
+          <input type="tel" name="phoneNumber" id="phoneNumber" required />
         </div>
         <div className="inputWrap">
           <label htmlFor="email">Email:</label> <br />
           <input type="email" name="email" id="email" required />
         </div>
         <div className="inputWrap">
+          <div data-netlify-recaptcha="true"></div>
           <Button
             color="var(--accentColor)"
             borderColor="white"

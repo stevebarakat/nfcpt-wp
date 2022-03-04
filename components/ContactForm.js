@@ -7,6 +7,7 @@ export default function ContactForm() {
         name="contact"
         action="/contact-thanks"
         method="POST"
+        data-netlify-recaptcha="true"
         data-netlify="true"
       >
         <input type="hidden" name="form-name" value="contact" />
@@ -26,7 +27,8 @@ export default function ContactForm() {
           <label htmlFor="message">Message:</label> <br />
           <textarea name="message" id="message" rows="5" required></textarea>
         </div>
-        <div style={{ float: "right" }}>
+        <div style={{ display: "flex" }}>
+          <div data-netlify-recaptcha="true"></div>
           <Button
             type="submit"
             color="var(--darkColor)"
