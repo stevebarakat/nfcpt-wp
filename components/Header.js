@@ -172,7 +172,7 @@ export default function Header() {
             </ul>
           </div>
           <div className="link">
-            <a href="tel:904-272-4329">(904) 277-4686</a>
+            <a href="tel:904-272-4329">(904) 272-4329</a>
           </div>
         </div>
       </nav>
