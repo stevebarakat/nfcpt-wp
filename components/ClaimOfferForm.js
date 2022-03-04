@@ -7,7 +7,6 @@ export default function ClaimOfferForm() {
         name="claim-offer"
         action="/get-started-thanks"
         method="POST"
-        data-netlify-recaptcha="true"
         data-netlify="true"
       >
         <input type="hidden" name="form-name" value="claim-offer" />
@@ -24,7 +23,6 @@ export default function ClaimOfferForm() {
           <input type="email" name="email" id="email" required />
         </div>
         <div className="inputWrap">
-          <div data-netlify-recaptcha="true"></div>
           <Button
             color="var(--accentColor)"
             borderColor="white"
