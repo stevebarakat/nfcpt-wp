@@ -46,7 +46,7 @@ export default function Plans() {
               Save {level.discountAmount}%
             </div>
             <div>
-              <span className={styles.strike}>${level.newPrice}</span> $
+              <span className="strike">${level.newPrice}</span> $
               {level.oldPrice}
             </div>
           </div>
