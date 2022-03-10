@@ -251,6 +251,9 @@ article {
     position: relative;
     top: -200px;
   }
+  form[name="contact"] {
+    padding: 4rem;
+  }
 }
 @media (min-width: 650px) {
   h1,
@@ -305,9 +308,6 @@ article {
   }
 }
 
-form[name="contact"] {
-  padding: 4rem;
-}
 .inputWrap {
   padding-bottom: 2rem;
 }
