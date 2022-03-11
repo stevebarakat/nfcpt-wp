@@ -3,7 +3,12 @@ import Button from "./Button";
 export default function ClaimOfferForm() {
   return (
     <>
-      <form name="claim-offer" action="/" method="POST" data-netlify="true">
+      <form
+        name="claim-offer"
+        action="/claim-offer-thanks.js"
+        method="POST"
+        data-netlify="true"
+      >
         <input type="hidden" name="form-name" value="claim-offer" />
         <div className="inputWrap">
           <label htmlFor="name">Name:</label> <br />
