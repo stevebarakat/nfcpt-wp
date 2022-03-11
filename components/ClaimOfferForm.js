@@ -5,7 +5,7 @@ export default function ClaimOfferForm() {
     <>
       <form
         name="claim-offer"
-        action="/claim-offer-thanks.js"
+        action="/claim-offer-thanks"
         method="POST"
         data-netlify="true"
       >
