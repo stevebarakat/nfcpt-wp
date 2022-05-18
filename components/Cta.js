@@ -2,7 +2,7 @@ import styles from "./cta.module.css";
 import Button from "./Button";
 import Image from "next/image";
 import Link from "next/link";
-import ninety from "../images/ninety.svg";
+import hundredFive from "../images/hundredFive.svg";
 import special from "../images/special.svg";
 
 const Cta = () => {
@@ -10,10 +10,10 @@ const Cta = () => {
     <div className={styles.cta}>
       <div className="grid">
         <div id="left" className={styles.ctaLeftWrap}>
-          <div className={styles.ninety}>
+          <div className={styles.hundredFive}>
             <Image
               objectPosition="center"
-              src={ninety}
+              src={hundredFive}
               alt="New Patient Special"
             />
           </div>
